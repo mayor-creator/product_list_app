@@ -1,21 +1,20 @@
-interface ProductData {
-  image: {
-    desktop: string;
-  };
-  category: string;
-  name: string;
-  price: number;
+import type { Product } from "../types/Product";
+
+interface ProductListProps {
+  data: Product[];
 }
 
-export const ProductList = ({ data }: { data: ProductData }) => {
-  const imageSrc = data.image.desktop;
-  const imageAlt = data.category;
-
+export const ProductList = ({ data }: ProductListProps) => {
   return (
-    <>
-      <div>
-        <img src={imageSrc} alt={imageAlt} />
-      </div>
-    </>
+    <div className="product-list">
+      {data.map((product) => (
+        <div key={product.name} className="product-item">
+          <img src={product.image.desktop} alt={product.category} />
+          <h3>{product.name}</h3>
+          <p>{product.category}</p>
+          <p>${product.price.toFixed(2)}</p>
+        </div>
+      ))}
+    </div>
   );
 };
