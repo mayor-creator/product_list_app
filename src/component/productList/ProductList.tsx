@@ -1,3 +1,4 @@
+import { AddToCartButton } from "../ui/AddToCartButton";
 import type { Product } from "../types/Product";
 
 interface ProductListProps {
@@ -22,6 +23,7 @@ export const ProductList = ({ data }: ProductListProps) => {
             {/* Fallback image if picture element is not supported */}
             <img src={product.image.mobile} alt={product.name} loading="lazy" />
           </picture>
+          <AddToCartButton />
           <p>{product.category}</p>
           <p>{product.name}</p>
           <p>${product.price.toFixed(2)}</p>
