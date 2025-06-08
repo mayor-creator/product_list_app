@@ -1,4 +1,5 @@
 import { AddToCartButton } from "../ui/AddToCartButton";
+import { CartItemControlButton } from "../ui/CartItemControlButton";
 import type { Product } from "../types/Product";
 
 interface ProductListProps {
@@ -27,6 +28,7 @@ export const ProductList = ({ data }: ProductListProps) => {
           <p>{product.category}</p>
           <p>{product.name}</p>
           <p>${product.price.toFixed(2)}</p>
+          <CartItemControlButton />
         </div>
       ))}
     </div>
