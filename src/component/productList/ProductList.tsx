@@ -8,23 +8,38 @@ interface ProductListProps {
   data: Product[];
 }
 
+interface CartItems {
+  [key: string]: number;
+}
+
 export const ProductList = ({ data }: ProductListProps) => {
-  const [addItemToCart, setItemToCart] = useState<boolean>(false);
-  const [itemQuantity, setItemQuantity] = useState<number>(1);
+  const [cartItems, setCartItems] = useState<CartItems>({});
 
-  const handleAddItemToCart = () => {
-    setItemToCart(true);
-    setItemQuantity(1);
+  const handleAddItemToCart = (productName: string) => {
+    setCartItems((prev) => ({
+      ...prev,
+      [productName]: 1,
+    }));
   };
 
-  const handleIncreaseQuantity = () => {
-    setItemQuantity((prev) => prev + 1);
+  const handleIncreaseQuantity = (productName: string) => {
+    setCartItems((prev) => ({
+      ...prev,
+      [productName]: prev[productName] + 1,
+    }));
   };
 
-  const handleDecreaseQuantity = () => {
-    itemQuantity === 1
-      ? setItemToCart(false)
-      : setItemQuantity((prev) => prev + 1);
+  const handleDecreaseQuantity = (productName: string) => {
+    if (cartItems[productName] === 1) {
+      const newCartItems = { ...cartItems };
+      delete newCartItems[productName];
+      setCartItems(newCartItems);
+    } else {
+      setCartItems((prev) => ({
+        ...prev,
+        [productName]: prev[productName] - 1,
+      }));
+    }
   };
 
   return (
@@ -40,11 +55,22 @@ export const ProductList = ({ data }: ProductListProps) => {
             <source srcSet={product.image.mobile} />
             <img src={product.image.mobile} alt={product.name} loading="lazy" />
           </picture>
-          <AddToCartButton />
-          <p>{product.category}</p>
-          <p>{product.name}</p>
-          <p>${product.price.toFixed(2)}</p>
-          <CartItemControlButton />
+          {cartItems[product.name] ? (
+            <CartItemControlButton
+              quantity={cartItems[product.name]}
+              onDecrease={() => handleDecreaseQuantity(product.name)}
+              onIncrease={() => handleIncreaseQuantity(product.name)}
+            />
+          ) : (
+            <AddToCartButton
+              onClick={() => handleAddItemToCart(product.name)}
+            />
+          )}
+          <div className="product-details">
+            <p className="product-category">{product.category}</p>
+            <h2 className="product-name">{product.name}</h2>
+            <p className="product-price">${product.price.toFixed(2)}</p>
+          </div>
         </div>
       ))}
     </div>
