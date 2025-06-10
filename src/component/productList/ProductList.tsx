@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { AddToCartButton } from "../ui/AddToCartButton";
 import { CartItemControlButton } from "../ui/CartItemControlButton";
 import type { Product } from "../types/Product";
@@ -7,6 +9,9 @@ interface ProductListProps {
 }
 
 export const ProductList = ({ data }: ProductListProps) => {
+  const [addItemToCart, setItemToCart] = useState<boolean>(false);
+  const [itemQuantity, setItemQuantity] = useState<number>(1);
+
   return (
     <div className="product-list">
       {data.map((product) => (
