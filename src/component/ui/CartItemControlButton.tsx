@@ -1,13 +1,25 @@
 import increaseQuantityIcon from "../../assets/images/icon-increment-quantity.svg";
 import decreaseQuantityIcon from "../../assets/images/icon-decrement-quantity.svg";
 
-export const CartItemControlButton = () => {
+interface CartItemControlButtonProps {
+  quantity: number;
+  onDecrease: () => void;
+  onIncrease: () => void;
+}
+
+export const CartItemControlButton = ({
+  quantity,
+  onDecrease,
+  onIncrease,
+}: CartItemControlButtonProps) => {
   return (
     <>
-      <button>
-        <img src={decreaseQuantityIcon} alt="decrease-icon" />
-        <p>0</p>
-        <img src={increaseQuantityIcon} alt="increase-icon" />
+      <button onClick={onDecrease}>
+        <img src={decreaseQuantityIcon} alt="decrease quantity" />
+      </button>
+      <p>{quantity}</p>
+      <button onClick={onIncrease}>
+        <img src={increaseQuantityIcon} alt="increase quantity" />
       </button>
     </>
   );
