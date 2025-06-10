@@ -14,13 +14,15 @@ export const CartItemControlButton = ({
 }: CartItemControlButtonProps) => {
   return (
     <>
-      <button onClick={onDecrease}>
-        <img src={decreaseQuantityIcon} alt="decrease quantity" />
-      </button>
-      <p>{quantity}</p>
-      <button onClick={onIncrease}>
-        <img src={increaseQuantityIcon} alt="increase quantity" />
-      </button>
+      <div>
+        <button onClick={onDecrease}>
+          <img src={decreaseQuantityIcon} alt="decrease quantity" />
+        </button>
+        <span>{quantity}</span>
+        <button onClick={onIncrease}>
+          <img src={increaseQuantityIcon} alt="increase quantity" />
+        </button>
+      </div>
     </>
   );
 };
