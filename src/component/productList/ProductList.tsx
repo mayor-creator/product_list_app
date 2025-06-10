@@ -12,6 +12,21 @@ export const ProductList = ({ data }: ProductListProps) => {
   const [addItemToCart, setItemToCart] = useState<boolean>(false);
   const [itemQuantity, setItemQuantity] = useState<number>(1);
 
+  const handleAddItemToCart = () => {
+    setItemToCart(true);
+    setItemQuantity(1);
+  };
+
+  const handleIncreaseQuantity = () => {
+    setItemQuantity((prev) => prev + 1);
+  };
+
+  const handleDecreaseQuantity = () => {
+    itemQuantity === 1
+      ? setItemToCart(false)
+      : setItemQuantity((prev) => prev + 1);
+  };
+
   return (
     <div className="product-list">
       {data.map((product) => (
