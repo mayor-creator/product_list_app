@@ -24,29 +24,38 @@ export const ProductList = ({
       <h1>Desserts</h1>
       {data.map((product) => (
         <div key={product.name} className="product-item">
-          <picture>
-            <source
-              media="(min-width: 1024px)"
-              srcSet={product.image.desktop}
-            />
-            <source media="(min-width: 768px)" srcSet={product.image.tablet} />
-            <source srcSet={product.image.mobile} />
-            <img src={product.image.mobile} alt={product.name} loading="lazy" />
-          </picture>
+          <div className="product-image">
+            <picture>
+              <source
+                media="(min-width: 1024px)"
+                srcSet={product.image.desktop}
+              />
+              <source
+                media="(min-width: 768px)"
+                srcSet={product.image.tablet}
+              />
+              <source srcSet={product.image.mobile} />
+              <img
+                src={product.image.mobile}
+                alt={product.name}
+                loading="lazy"
+              />
+            </picture>
 
-          {cartItems[product.name] ? (
-            <CartItemControlButton
-              quantity={cartItems[product.name]}
-              onDecrease={() =>
-                onUpdateQuantity(product.name, cartItems[product.name] - 1)
-              }
-              onIncrease={() =>
-                onUpdateQuantity(product.name, cartItems[product.name] + 1)
-              }
-            />
-          ) : (
-            <AddToCartButton onClick={() => onAddToCart(product.name)} />
-          )}
+            {cartItems[product.name] ? (
+              <CartItemControlButton
+                quantity={cartItems[product.name]}
+                onDecrease={() =>
+                  onUpdateQuantity(product.name, cartItems[product.name] - 1)
+                }
+                onIncrease={() =>
+                  onUpdateQuantity(product.name, cartItems[product.name] + 1)
+                }
+              />
+            ) : (
+              <AddToCartButton onClick={() => onAddToCart(product.name)} />
+            )}
+          </div>
 
           <div className="product-details">
             <p className="product-category">{product.category}</p>
