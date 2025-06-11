@@ -49,7 +49,7 @@ export default function App() {
         onAddToCart={handleAddToCart}
         onUpdateQuantity={handleUpdateQuantity}
       />
-      <Card>
+      <Card className="cart-list">
         <Cart items={cartItemsList} onConfirmOrder={() => {}} />
       </Card>
     </Card>
