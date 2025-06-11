@@ -21,6 +21,7 @@ export const ProductList = ({
 }: ProductListProps) => {
   return (
     <div className="product-list">
+      <h1>Desserts</h1>
       {data.map((product) => (
         <div key={product.name} className="product-item">
           <picture>
