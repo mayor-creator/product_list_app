@@ -5,6 +5,8 @@ import { Cart } from "./component/cart/Cart";
 import type { Product } from "./component/types/Product";
 import products from "../data.json";
 
+import "./App.css";
+
 interface CartItems {
   [key: string]: number;
 }

@@ -1,1 +1,5 @@
-
+.main-wrapper {
+  width: min(100% - 2rem, 76rem);
+  margin-inline: auto;
+  padding: 1.5rem;
+}
