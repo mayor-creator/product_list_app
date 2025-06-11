@@ -33,23 +33,25 @@ export const ProductList = ({
             <source srcSet={product.image.mobile} />
             <img src={product.image.mobile} alt={product.name} loading="lazy" />
           </picture>
+
+          {cartItems[product.name] ? (
+            <CartItemControlButton
+              quantity={cartItems[product.name]}
+              onDecrease={() =>
+                onUpdateQuantity(product.name, cartItems[product.name] - 1)
+              }
+              onIncrease={() =>
+                onUpdateQuantity(product.name, cartItems[product.name] + 1)
+              }
+            />
+          ) : (
+            <AddToCartButton onClick={() => onAddToCart(product.name)} />
+          )}
+
           <div className="product-details">
             <p className="product-category">{product.category}</p>
             <p className="product-name">{product.name}</p>
             <p className="product-price">${product.price.toFixed(2)}</p>
-            {cartItems[product.name] ? (
-              <CartItemControlButton
-                quantity={cartItems[product.name]}
-                onDecrease={() =>
-                  onUpdateQuantity(product.name, cartItems[product.name] - 1)
-                }
-                onIncrease={() =>
-                  onUpdateQuantity(product.name, cartItems[product.name] + 1)
-                }
-              />
-            ) : (
-              <AddToCartButton onClick={() => onAddToCart(product.name)} />
-            )}
           </div>
         </div>
       ))}
