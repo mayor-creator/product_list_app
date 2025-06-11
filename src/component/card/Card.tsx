@@ -2,12 +2,13 @@ import type { ReactNode } from "react";
 
 interface CardProps {
   children: ReactNode;
+  className?: string;
 }
 
-export const Card = ({ children }: CardProps) => {
+export const Card = ({ children, className }: CardProps) => {
   return (
     <>
-      <div>{children}</div>
+      <div className={className}>{children}</div>
     </>
   );
 };

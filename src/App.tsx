@@ -42,7 +42,7 @@ export default function App() {
   });
 
   return (
-    <Card>
+    <Card className="main-wrapper">
       <ProductList
         data={products as Product[]}
         cartItems={cartItems}
