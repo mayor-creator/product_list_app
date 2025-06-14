@@ -2,6 +2,8 @@ import { AddToCartButton } from "../ui/AddToCartButton";
 import { CartItemControlButton } from "../ui/CartItemControl/CartItemControlButton";
 import type { Product } from "../types/Product";
 
+import styles from "./ProductList.module.css";
+
 interface ProductListProps {
   data: Product[];
   onAddToCart: (productName: string) => void;
@@ -36,6 +38,7 @@ export const ProductList = ({
               />
               <source srcSet={product.image.mobile} />
               <img
+                className={styles.productImageItem}
                 src={product.image.mobile}
                 alt={product.name}
                 loading="lazy"
@@ -58,9 +61,9 @@ export const ProductList = ({
           </div>
 
           <div className="product-details">
-            <p className="product-category">{product.category}</p>
-            <p className="product-name">{product.name}</p>
-            <p className="product-price">${product.price.toFixed(2)}</p>
+            <p className={styles.productCategory}>{product.category}</p>
+            <p className={styles.productName}>{product.name}</p>
+            <p className={styles.productPrice}>${product.price.toFixed(2)}</p>
           </div>
         </div>
       ))}
