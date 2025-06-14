@@ -1,5 +1,5 @@
 import { Button } from "../button/Button";
-
+import styles from "./CartItemControlButton.module.css";
 import increaseQuantityIcon from "../../../assets/images/icon-increment-quantity.svg";
 import decreaseQuantityIcon from "../../../assets/images/icon-decrement-quantity.svg";
 
@@ -16,7 +16,7 @@ export const CartItemControlButton = ({
 }: CartItemControlButtonProps) => {
   return (
     <>
-      <div className="cart-item-control">
+      <div className={styles.cartItemControl}>
         <Button
           onClick={onDecrease}
           variant="secondary"
@@ -25,7 +25,7 @@ export const CartItemControlButton = ({
         >
           <img src={decreaseQuantityIcon} alt="decrease quantity" />
         </Button>
-        <span className="cart-item-control__quantity">{quantity}</span>
+        <span className={styles.cartItemControlQuantity}>{quantity}</span>
         <Button
           onClick={onIncrease}
           variant="secondary"
