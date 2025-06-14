@@ -1,14 +1,29 @@
 import type { ReactNode } from "react";
-import styles from "./Button.module.css";
+import "./Button.css";
 
 interface ButtonProps {
+  variant?: "primary" | "secondary";
+  size?: "small" | "medium" | "large";
   children: ReactNode;
-  onClick?: () => void;
+  className?: string;
+  onClick: () => void;
 }
 
-export const Button = ({ children, onClick }: ButtonProps) => {
+export const Button = ({
+  onClick,
+  variant = "primary",
+  size = "medium",
+  children,
+  className,
+  ...props
+}: ButtonProps) => {
   return (
-    <button onClick={onClick} className={styles.button}>
+    <button
+      onClick={onClick}
+      className={`button button--${variant} button--${size} ${className || ""}`}
+      type="button"
+      {...props}
+    >
       {children}
     </button>
   );
