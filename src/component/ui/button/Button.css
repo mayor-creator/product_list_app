@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: .5rem;
   border: none;
   cursor: pointer;
   font-weight: 600;
@@ -10,16 +10,16 @@
 }
 
 .button:hover {
-  border: 1px solid #C73B0F;
-  color: #C73B0F;
+  border: .063rem solid var(--color-red);
+  color: var(--color-red);
 }
 
 .button--primary {
-  border: 1px solid #260F08;
-  border-radius: 40px;
+  border: .063rem solid var(--color-rose-900);
+  border-radius: 2.5rem;
   background-color: white;
   color: #260F08;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .button--secondary {
