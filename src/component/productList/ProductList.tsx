@@ -1,5 +1,5 @@
 import { AddToCartButton } from "../ui/AddToCartButton";
-import { CartItemControlButton } from "../ui/CartItemControlButton";
+import { CartItemControlButton } from "../ui/CartItemControl/CartItemControlButton";
 import type { Product } from "../types/Product";
 
 interface ProductListProps {

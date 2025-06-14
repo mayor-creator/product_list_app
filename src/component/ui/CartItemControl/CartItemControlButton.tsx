@@ -1,4 +1,4 @@
-import { Button } from "./button/Button";
+import { Button } from "../button/Button";
 
 import increaseQuantityIcon from "../../assets/images/icon-increment-quantity.svg";
 import decreaseQuantityIcon from "../../assets/images/icon-decrement-quantity.svg";

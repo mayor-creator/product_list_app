@@ -17,8 +17,8 @@
 .button--primary {
   border: .063rem solid var(--color-rose-900);
   border-radius: 2.5rem;
-  background-color: white;
-  color: #260F08;
+  background-color: var(--color-white);
+  color: var(--color-rose-900);
   font-size: 0.875rem;
 }
 
