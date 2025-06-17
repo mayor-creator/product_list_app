@@ -1,4 +1,5 @@
 import carbonNeutralIcon from "../../assets/images/icon-carbon-neutral.svg";
+import styles from "./Cart.module.css";
 
 interface CartItem {
   name: string;
@@ -19,19 +20,25 @@ export const Cart = ({ items = [], onConfirmOrder }: CartProps) => {
   const total = calculateTotal(items);
 
   return (
-    <section className="cart">
-      <h2>Your Cart {items.length}</h2>
+    <section className={styles.cart}>
+      <h2 className={styles.cartTitle}>Your Cart ({items.length})</h2>
 
-      <div className="cart__items">
+      <div className={styles.cartItemContainer}>
         {items.length > 0 ? (
           items.map((item) => (
-            <div key={item.name} className="cart__item">
-              <p className="cart__item-name">{item.name}</p>
-              <span className="cart__item-quantity">{item.quantity}</span>
-              <span className="cart__item-price">${item.price.toFixed(2)}</span>
-              <span className="cart__item-total">
-                ${(item.quantity * item.price).toFixed(2)}
-              </span>
+            <div key={item.name} className={styles.cartItem}>
+              <p className={styles.cartItemName}>{item.name}</p>
+              <div className={styles.cartItemChild}>
+                <span className={styles.cartItemQuantity}>
+                  {item.quantity}x
+                </span>
+                <span className={styles.cartItemPrice}>
+                  ${item.price.toFixed(2)}
+                </span>
+                <span className={styles.cartItemTotal}>
+                  ${(item.quantity * item.price).toFixed(2)}
+                </span>
+              </div>
             </div>
           ))
         ) : (
