@@ -46,9 +46,9 @@ export const Cart = ({ items = [], onConfirmOrder }: CartProps) => {
         )}
       </div>
 
-      <div className="cart__total">
-        <span>Order Total</span>
-        <span>${total.toFixed(2)}</span>
+      <div className={styles.cartTotal}>
+        <span className={styles.orderTotalTitle}>Order Total</span>
+        <span className={styles.orderTotalPrice}>${total.toFixed(2)}</span>
       </div>
 
       <div className="cart__info">
@@ -58,9 +58,9 @@ export const Cart = ({ items = [], onConfirmOrder }: CartProps) => {
           width="24"
           height="24"
         />
-        <p>
+        <span>
           This is a <strong>carbon-neutral</strong> delivery
-        </p>
+        </span>
       </div>
 
       <button

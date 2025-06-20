@@ -6,7 +6,7 @@
 }
 
 .button:hover {
-  border: .063rem solid var(--color-red);
+  border: 0.063rem solid var(--color-red);
   color: var(--color-red);
 }
 
@@ -14,8 +14,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: .5rem;
-  border: .063rem solid var(--color-rose-900);
+  gap: 0.5rem;
+  border: 0.063rem solid var(--color-rose-900);
   border-radius: 2.5rem;
   background-color: var(--color-white);
   color: var(--color-rose-900);
@@ -29,7 +29,7 @@
 
 .button--small {
   border-radius: 50%;
-  border: .063rem solid white;
+  border: 0.063rem solid white;
   background: var(--color-red);
   height: 1.25rem;
   width: 1.25rem;

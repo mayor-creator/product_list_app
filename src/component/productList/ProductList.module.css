@@ -1,5 +1,5 @@
 .productImageItem {
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
 .productCategory {
@@ -10,12 +10,12 @@
 
 .productName {
   color: var(--color-rose-900);
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
 }
 
 .productPrice {
   color: var(--color-red);
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
 }

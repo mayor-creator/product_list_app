@@ -1,54 +1,69 @@
 .cart {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding: 24px;
-  border: 1px solid red;
+  gap: 1.5rem;
+  padding: 1.5rem;
 }
 
 .cartItemContainer {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1rem;
 }
-
 
 .cartTitle {
   color: var(--color-red);
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
 .cartItem {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .cartItemChild {
   display: flex;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .cartItemName {
   color: var(--color-rose-900);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 
 .cartItemQuantity {
   color: var(--color-red);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 
 .cartItemPrice {
   color: var(--color-rose-500);
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .cartItemTotal {
   color: var(--color-rose-500);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
+}
+
+.cartTotal {
+  display: flex;
+  justify-content: space-between;
+}
+
+.orderTotalTitle {
+  color: var(--color-rose-900);
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.orderTotalPrice {
+  color: var(--color-rose-900);
+  font-size: 1.5rem;
+  font-weight: 700;
 }
