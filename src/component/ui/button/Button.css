@@ -20,6 +20,7 @@
   background-color: var(--color-white);
   color: var(--color-rose-900);
   font-size: 0.875rem;
+  width: 10rem;
 }
 
 .button--secondary {
