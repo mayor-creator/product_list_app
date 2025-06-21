@@ -41,8 +41,26 @@ body {
   font-family: var(--font-primary);
 }
 
-.main-wrapper {
-  width: min(100% - 2rem, 76rem);
-  margin-inline: auto;
-  padding: 1.5rem;
+@media (max-width: 47.99rem) {
+  .main-wrapper {
+    width: min(100% - 2rem, 76rem);
+    margin-inline: auto;
+    padding: 1.5rem;
+  }
+}
+
+/* tablet media query */
+@media (min-width: 48rem) {
+  .main-wrapper {
+    padding: 40px;
+  }
+}
+
+/* laptop media query */
+@media (min-width: 64rem) {
+  .main-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 88px 40px;
+  }
 }

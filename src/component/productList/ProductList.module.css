@@ -32,3 +32,21 @@
   transform: translateX(-50%);
   z-index: 1;
 }
+
+/* tablet media query */
+@media (min-width: 48rem) {
+  .productList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* laptop media query */
+@media (min-width: 64rem) {
+  .productList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
