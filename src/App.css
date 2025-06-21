@@ -52,7 +52,7 @@ body {
 /* tablet media query */
 @media (min-width: 48rem) {
   .main-wrapper {
-    padding: 40px;
+    padding: 2.5rem;
   }
 }
 
@@ -61,6 +61,6 @@ body {
   .main-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 88px 40px;
+    padding: 5.5rem 2.5rem;
   }
 }
