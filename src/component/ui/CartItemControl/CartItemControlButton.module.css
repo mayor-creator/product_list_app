@@ -4,7 +4,7 @@
   align-items: center;
   border-radius: 2.5rem;
   background-color: var(--color-red);
-  max-width: 10rem;
+  width: 10rem;
   height: 2.75rem;
   cursor: pointer;
   color: var(--color-white);
