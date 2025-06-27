@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import "./Button.css";
 
 interface ButtonProps {
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "tertiary";
   size?: "small" | "medium" | "large";
   children: ReactNode;
   className?: string;

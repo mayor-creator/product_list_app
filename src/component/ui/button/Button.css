@@ -5,11 +5,6 @@
   transition: border 0.2s ease;
 }
 
-.button:hover {
-  border: 0.063rem solid var(--color-red);
-  color: var(--color-red);
-}
-
 .button--primary {
   display: flex;
   justify-content: center;
@@ -23,9 +18,21 @@
   width: 10rem;
 }
 
+.button--primary:hover {
+  border: 0.063rem solid var(--color-red);
+  color: var(--color-red);
+}
+
 .button--secondary {
-  background-color: #e5e5ea;
-  color: #1c1c1e;
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.button--tertiary {
+  border-radius: 2.5rem;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  width: 100%;
 }
 
 .button--small {

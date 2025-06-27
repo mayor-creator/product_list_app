@@ -1,3 +1,5 @@
+import { Button } from "../ui/button/Button";
+
 import carbonNeutralIcon from "../../assets/images/icon-carbon-neutral.svg";
 import styles from "./Cart.module.css";
 
@@ -63,15 +65,13 @@ export const Cart = ({ items = [], onConfirmOrder }: CartProps) => {
         </span>
       </div>
 
-      <button
-        className="cart__submit"
+      <Button
         onClick={onConfirmOrder}
-        disabled={items.length === 0}
-        type="button"
         aria-label="Confirm order"
+        variant="tertiary"
       >
         Confirm Order
-      </button>
+      </Button>
     </section>
   );
 };
