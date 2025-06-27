@@ -53,8 +53,9 @@ export const Cart = ({ items = [], onConfirmOrder }: CartProps) => {
         <span className={styles.orderTotalPrice}>${total.toFixed(2)}</span>
       </div>
 
-      <div className="cart__info">
+      <div className={styles.cartInfo}>
         <img
+          className={styles.cartImage}
           src={carbonNeutralIcon}
           alt="Carbon neutral delivery"
           width="24"
