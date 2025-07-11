@@ -1,14 +1,10 @@
 import type { ReactNode } from "react";
 
 interface CardProps {
-  children: ReactNode;
-  className?: string;
+	children: ReactNode;
+	className?: string;
 }
 
 export const Card = ({ children, className }: CardProps) => {
-  return (
-    <>
-      <div className={className}>{children}</div>
-    </>
-  );
+	return <div className={className}>{children}</div>;
 };
