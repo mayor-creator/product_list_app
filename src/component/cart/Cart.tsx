@@ -48,6 +48,7 @@ export const Cart = ({
 									X
 								</button>
 							</div>
+							<hr />
 						</div>
 					))
 				) : (
