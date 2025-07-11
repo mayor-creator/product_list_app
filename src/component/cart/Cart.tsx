@@ -11,9 +11,14 @@ interface CartItem {
 interface CartProps {
 	items: CartItem[];
 	onConfirmOrder: () => void;
+	onRemoveItem: (name: string) => void;
 }
 
-export const Cart = ({ items = [], onConfirmOrder }: CartProps) => {
+export const Cart = ({
+	items = [],
+	onConfirmOrder,
+	onRemoveItem,
+}: CartProps) => {
 	const calculateTotal = (items: CartItem[]) => {
 		return items.reduce((total, item) => total + item.price * item.quantity, 0);
 	};
@@ -39,6 +44,9 @@ export const Cart = ({ items = [], onConfirmOrder }: CartProps) => {
 								<span className={styles.cartItemTotal}>
 									${(item.quantity * item.price).toFixed(2)}
 								</span>
+								<button type="button" onClick={() => onRemoveItem(item.name)}>
+									X
+								</button>
 							</div>
 						</div>
 					))

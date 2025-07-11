@@ -34,6 +34,14 @@ export default function App() {
 		}
 	};
 
+	const handleRemoveItem = (itemNameToRemove: string) => {
+		setCartItems((prevItems) => {
+			const updatedItems = { ...prevItems };
+			delete updatedItems[itemNameToRemove];
+			return updatedItems;
+		});
+	};
+
 	const cartItemsList = Object.entries(cartItems).map(([name, quantity]) => {
 		const product = products.find((product) => product.name === name);
 		return {
@@ -52,7 +60,11 @@ export default function App() {
 				onUpdateQuantity={handleUpdateQuantity}
 			/>
 			<Card className="cart-list">
-				<Cart items={cartItemsList} onConfirmOrder={() => {}} />
+				<Cart
+					items={cartItemsList}
+					onConfirmOrder={() => {}}
+					onRemoveItem={handleRemoveItem}
+				/>
 			</Card>
 		</Card>
 	);
