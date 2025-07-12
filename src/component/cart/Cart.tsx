@@ -34,21 +34,30 @@ export const Cart = ({
 					items.map((item) => (
 						<div key={item.name} className={styles.cartItem}>
 							<p className={styles.cartItemName}>{item.name}</p>
-							<div className={styles.cartItemChild}>
-								<span className={styles.cartItemQuantity}>
-									{item.quantity}x
-								</span>
-								<span className={styles.cartItemPrice}>
-									${item.price.toFixed(2)}
-								</span>
-								<span className={styles.cartItemTotal}>
-									${(item.quantity * item.price).toFixed(2)}
-								</span>
-								<button type="button" onClick={() => onRemoveItem(item.name)}>
-									X
-								</button>
+							<div className={styles.cartItemCategory}>
+								<div className={styles.cartItemChild}>
+									<span className={styles.cartItemQuantity}>
+										{item.quantity}x
+									</span>
+									<span className={styles.cartItemPrice}>
+										${item.price.toFixed(2)}
+									</span>
+									<span className={styles.cartItemTotal}>
+										${(item.quantity * item.price).toFixed(2)}
+									</span>
+								</div>
+								<div>
+									<button
+										type="button"
+										aria-label="Remove product name from cart"
+										className={styles.cartRemoveButton}
+										onClick={() => onRemoveItem(item.name)}
+									>
+										X
+									</button>
+								</div>
 							</div>
-							<hr />
+							<hr className={styles.cartItemDivider} />
 						</div>
 					))
 				) : (

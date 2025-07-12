@@ -23,6 +23,11 @@
   gap: 0.5rem;
 }
 
+.cartItemCategory {
+  display: flex;
+  justify-content: space-between;
+}
+
 .cartItemChild {
   display: flex;
   gap: 0.5rem;
@@ -80,4 +85,30 @@
 
 .cartImage {
   display: inline;
+}
+
+.cartRemoveButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 0.063rem solid var(--color-rose-400);
+  background-color: var(--color-white);
+  color: var(--color-rose-400);
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 600;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.cartRemoveButton:hover {
+  border: 0.063rem solid var(--color-rose-900);
+  color: var(--color-rose-900);
+}
+
+.cartItemDivider {
+  background: var(--color-rose-100);
+  border: none;
+  height: 0.125rem;
 }
