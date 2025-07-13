@@ -2,6 +2,7 @@ import { useState } from "react";
 import products from "../data.json";
 import { Card } from "./component/card/Card";
 import { Cart } from "./component/cart/Cart";
+import { ConfirmOrderModal } from "./component/modal/OrderModal";
 import { ProductList } from "./component/productList/ProductList";
 import type { Product } from "./component/types/Product";
 
@@ -13,6 +14,7 @@ interface CartItems {
 
 export default function App() {
 	const [cartItems, setCartItems] = useState<CartItems>({});
+	const [isConfirmedOrder, setIsConfirmedOrder] = useState(false);
 
 	const handleAddToCart = (productName: string) => {
 		setCartItems((prev) => ({
@@ -42,6 +44,19 @@ export default function App() {
 		});
 	};
 
+	const handleConfirmOrder = () => {
+		setIsConfirmedOrder(true);
+	};
+
+	const handleStartNewOrder = () => {
+		setCartItems({});
+		setIsConfirmedOrder(false);
+	};
+
+	const handleCloseModal = () => {
+		setIsConfirmedOrder(false);
+	};
+
 	const cartItemsList = Object.entries(cartItems).map(([name, quantity]) => {
 		const product = products.find((product) => product.name === name);
 		return {
@@ -62,10 +77,16 @@ export default function App() {
 			<Card className="cart-list">
 				<Cart
 					items={cartItemsList}
-					onConfirmOrder={() => {}}
+					onConfirmOrder={handleConfirmOrder}
 					onRemoveItem={handleRemoveItem}
 				/>
 			</Card>
+			<ConfirmOrderModal
+				items={cartItemsList}
+				isVisible={isConfirmedOrder}
+				onClose={handleCloseModal}
+				onStartNewOrder={handleStartNewOrder}
+			></ConfirmOrderModal>
 		</Card>
 	);
 }
