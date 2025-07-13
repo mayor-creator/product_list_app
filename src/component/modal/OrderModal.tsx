@@ -24,6 +24,12 @@ export const ConfirmOrderModal = ({
 		return null;
 	}
 
+	const calculateTotal = (items: CartItem[]) => {
+		return items.reduce((total, item) => total + item.price * item.quantity, 0);
+	};
+
+	const total = calculateTotal(items);
+
 	return (
 		<>
 			<img src={orderConfirmedIcon} alt="check mark icon" />
@@ -49,6 +55,10 @@ export const ConfirmOrderModal = ({
 							</div>
 						))
 					: null}
+			</div>
+			<div>
+				<span>Order Total</span>
+				<span>${total.toFixed(2)}</span>
 			</div>
 			<Button variant="primary" size="medium" onClick={onStartNewOrder}>
 				Start New Order
