@@ -1,0 +1,107 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1000;
+  gap: 2rem;
+}
+
+.titleInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.modalInfoContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modalTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  width: 20.438rem;
+}
+
+.modalMessage {
+  color: var(--color-rose-500);
+}
+
+.modalItemContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.modalItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.modalItemName {
+  color: var(--color-rose-900);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.modalItemQuantity {
+  color: var(--color-red);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.modalItemPrice {
+  color: var(--color-rose-500);
+  font-size: 0.875rem;
+}
+
+.modalItemTotal {
+  color: var(--color-rose-900);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.modalTotal {
+  display: flex;
+  justify-content: space-between;
+}
+
+.orderTotalTitle {
+  color: var(--color-rose-900);
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.orderTotalPrice {
+  color: var(--color-rose-900);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.modalItemChild {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.modalImage {
+  display: inline;
+}
+
+.modalDivider {
+  background: var(--color-rose-100);
+  border: none;
+  height: 0.125rem;
+}
+
+.modalButtonContainer {
+  padding: 1.5rem;
+}
