@@ -41,7 +41,11 @@ export const ConfirmOrderModal = ({
 							alt="check mark icon"
 							className={styles.modalImage}
 						/>
-						<button type="button" onClick={onClose}>
+						<button
+							type="button"
+							onClick={onClose}
+							className={styles.modalCloseButton}
+						>
 							X
 						</button>
 					</div>

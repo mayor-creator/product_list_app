@@ -44,6 +44,21 @@
   color: var(--color-rose-500);
 }
 
+.modalCloseButton {
+  background-color: var(--color-red);
+  border: 0.063rem solid var(--color-white);
+  color: var(--color-black);
+  cursor: pointer;
+  padding: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+}
+
 .modalItemContainer {
   background-color: var(--color-rose-50);
   border-radius: 0.5rem;
@@ -117,8 +132,26 @@
 /* --- Media Queries --- */
 /* Tablet Viewpoints (min-width: 768px) */
 @media (min-width: 48rem) {
+  .modalWrapper {
+    width: min(100% - 2rem, 76rem);
+    margin-inline: auto;
+    padding: 2.5rem;
+  }
+
+  .modalTitle {
+    width: 100%;
+  }
 }
 
 /* Desktop Viewport (min-width: 1024px) */
 @media (min-width: 64rem) {
+  .modalWrapper {
+    width: min(100% - 2rem, 37rem);
+    margin-inline: auto;
+    padding: 2.5rem;
+  }
+
+  .modalTitle {
+    width: 100%;
+  }
 }
