@@ -18,7 +18,6 @@ This is a solution to the [Product list with cart challenge on Frontend Mentor](
   - [Author](#author)
   - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -35,7 +34,9 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Mobile](./ProductListAppMobile.png)
+![Tablet](./ProductListAppTablet.png)
+![Laptop](./ProductListAppLaptop.png)
 
 ### Links
 
@@ -52,24 +53,25 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
+- [TypeScript](https://www.typescriptlang.org/) - TypeScript 
 
 ### What I learned
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+const cartItemsList = Object.entries(cartItems).map(([name, quantity]) => {
+		const product = products.find((product) => product.name === name);
+		return {
+			name,
+			quantity,
+			price: product?.price || 0,
+		};
+	});
 }
 ```
 
 ### Continued development
+- Testing components with Vitest
+- Error handling
 
 
 ### Useful resources
@@ -79,8 +81,6 @@ const proudOfThisFunc = () => {
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Frontend Mentor - [@mayor-creator](https://www.frontendmentor.io/profile/mayor-creator)
 
 ## Acknowledgments
