@@ -33,54 +33,55 @@ export const ConfirmOrderModal = ({
 
 	return (
 		<div className={styles.modalOverlay}>
-			<div className={styles.titleInfoContainer}>
-				<div className={styles.modalInfoContainer}>
-					<img
-						src={orderConfirmedIcon}
-						alt="check mark icon"
-						className={styles.modalImage}
-					/>
-					<button type="button" onClick={onClose}>
-						X
-					</button>
+			<div className={styles.modalWrapper}>
+				<div className={styles.titleInfoContainer}>
+					<div className={styles.modalInfoContainer}>
+						<img
+							src={orderConfirmedIcon}
+							alt="check mark icon"
+							className={styles.modalImage}
+						/>
+						<button type="button" onClick={onClose}>
+							X
+						</button>
+					</div>
+					<div>
+						<h1 className={styles.modalTitle}>Order Confirmed</h1>
+						<p className={styles.modalMessage}>We hope you enjoy your food!</p>
+					</div>
 				</div>
-				<div>
-					<h1 className={styles.modalTitle}>Order Confirmed</h1>
-					<p className={styles.modalMessage}>We hope you enjoy your food!</p>
-				</div>
-			</div>
 
-			<div className={styles.modalItemContainer}>
-				{items.length > 0
-					? items.map((item) => (
-							<div key={item.name} className={styles.modalItem}>
-								<p className={styles.modalItemName}>{item.name}</p>
-								<div className={styles.modalItemChild}>
-									<span className={styles.modalItemQuantity}>
-										{item.quantity}x
-									</span>
-									<span className={styles.modalItemPrice}>
-										${item.price.toFixed(2)}
-									</span>
-									<span className={styles.modalItemTotal}>
-										${(item.quantity * item.price).toFixed(2)}
-									</span>
+				<div className={styles.modalItemContainer}>
+					{items.length > 0
+						? items.map((item) => (
+								<div key={item.name} className={styles.modalItem}>
+									<p className={styles.modalItemName}>{item.name}</p>
+									<div className={styles.modalItemChild}>
+										<span className={styles.modalItemQuantity}>
+											{item.quantity}x
+										</span>
+										<span className={styles.modalItemPrice}>
+											${item.price.toFixed(2)}
+										</span>
+										<span className={styles.modalItemTotal}>
+											${(item.quantity * item.price).toFixed(2)}
+										</span>
+									</div>
+									<hr className={styles.modalDivider} />
 								</div>
-								<hr className={styles.modalDivider} />
-							</div>
-						))
-					: null}
-
-				<div className={styles.modalTotal}>
-					<span className={styles.orderTotalTitle}>Order Total</span>
-					<span className={styles.orderTotalPrice}>${total.toFixed(2)}</span>
+							))
+						: null}
+					<div className={styles.modalTotal}>
+						<span className={styles.orderTotalTitle}>Order Total</span>
+						<span className={styles.orderTotalPrice}>${total.toFixed(2)}</span>
+					</div>
 				</div>
-			</div>
 
-			<div className={styles.modalButtonContainer}>
-				<Button variant="tertiary" size="medium" onClick={onStartNewOrder}>
-					Start New Order
-				</Button>
+				<div className={styles.modalButtonContainer}>
+					<Button variant="tertiary" size="medium" onClick={onStartNewOrder}>
+						Start New Order
+					</Button>
+				</div>
 			</div>
 		</div>
 	);
