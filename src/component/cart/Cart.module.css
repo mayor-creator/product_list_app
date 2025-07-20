@@ -75,7 +75,7 @@
 
 .cartInfo {
   background-color: var(--color-rose-50);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   display: flex;
   gap: 0.625rem;
   align-items: center;
