@@ -6,6 +6,7 @@ interface CartItem {
 	name: string;
 	quantity: number;
 	price: number;
+	thumbnail: string;
 }
 
 interface ConfirmOrderModalProps {
@@ -58,21 +59,37 @@ export const ConfirmOrderModal = ({
 				<div className={styles.modalItemContainer}>
 					{items.length > 0
 						? items.map((item) => (
-								<div key={item.name} className={styles.modalItem}>
-									<p className={styles.modalItemName}>{item.name}</p>
-									<div className={styles.modalItemChild}>
-										<span className={styles.modalItemQuantity}>
-											{item.quantity}x
-										</span>
-										<span className={styles.modalItemPrice}>
-											${item.price.toFixed(2)}
-										</span>
-										<span className={styles.modalItemTotal}>
-											${(item.quantity * item.price).toFixed(2)}
-										</span>
+								<>
+									<div key={item.name} className={styles.modalItem}>
+										<div className={styles.thumbnailImageContainer}>
+											<img
+												src={item.thumbnail}
+												alt={item.name}
+												width="48px"
+												height="48px"
+											/>
+											<div className={styles.thumbnailItemChild}>
+												<p className={styles.modalItemName}>{item.name}</p>
+												<div>
+													<span className={styles.modalItemQuantity}>
+														{item.quantity}x
+													</span>
+													<span className={styles.modalItemPrice}>
+														${item.price.toFixed(2)}
+													</span>
+												</div>
+											</div>
+										</div>
+										<div className={styles.modalItemChildContainer}>
+											<span className={styles.modalItemTotal}>
+												${(item.quantity * item.price).toFixed(2)}
+											</span>
+										</div>
 									</div>
-									<hr className={styles.modalDivider} />
-								</div>
+									<div>
+										<hr className={styles.modalDivider} />
+									</div>
+								</>
 							))
 						: null}
 					<div className={styles.modalTotal}>

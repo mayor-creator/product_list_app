@@ -57,12 +57,16 @@ export default function App() {
 		setIsConfirmedOrder(false);
 	};
 
+	/*Convert cartItems object into a list of detailed product entries by
+		matching item names with product data and include a fallback values 
+		for missing data */
 	const cartItemsList = Object.entries(cartItems).map(([name, quantity]) => {
 		const product = products.find((product) => product.name === name);
 		return {
 			name,
 			quantity,
 			price: product?.price || 0,
+			thumbnail: product?.image?.thumbnail || "",
 		};
 	});
 

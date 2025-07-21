@@ -28,7 +28,7 @@ export const ProductList = ({
 			</section>
 			<section className={styles.productList}>
 				{data.map((product) => (
-					<article key={product.name} className="product-item">
+					<article key={product.name}>
 						<div className={styles.productImageContainer}>
 							<picture>
 								<source

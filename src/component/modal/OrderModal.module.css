@@ -70,8 +70,19 @@
 
 .modalItem {
   display: flex;
-  flex-direction: column;
   gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.thumbnailImageContainer {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+}
+
+.thumbnailItemChild {
+  display: flex;
+  flex-direction: column;
 }
 
 .modalItemName {
@@ -112,11 +123,6 @@
   color: var(--color-rose-900);
   font-size: 1.5rem;
   font-weight: 700;
-}
-
-.modalItemChild {
-  display: flex;
-  gap: 0.5rem;
 }
 
 .modalImage {
