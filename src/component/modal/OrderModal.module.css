@@ -91,6 +91,11 @@
   font-weight: 600;
 }
 
+.modalItemQuantityContainer {
+  display: flex;
+  gap: 1rem;
+}
+
 .modalItemQuantity {
   color: var(--color-red);
   font-size: 0.875rem;

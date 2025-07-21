@@ -70,7 +70,7 @@ export const ConfirmOrderModal = ({
 											/>
 											<div className={styles.thumbnailItemChild}>
 												<p className={styles.modalItemName}>{item.name}</p>
-												<div>
+												<div className={styles.modalItemQuantityContainer}>
 													<span className={styles.modalItemQuantity}>
 														{item.quantity}x
 													</span>
