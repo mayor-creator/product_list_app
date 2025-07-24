@@ -33,16 +33,18 @@ export const ProductList = ({
 							<picture>
 								<source
 									media="(min-width: 1024px)"
-									srcSet={product.image.desktop}
+									srcSet={import.meta.env.BASE_URL + product.image.desktop}
 								/>
 								<source
 									media="(min-width: 768px)"
-									srcSet={product.image.tablet}
+									srcSet={import.meta.env.BASE_URL + product.image.tablet}
 								/>
-								<source srcSet={product.image.mobile} />
+								<source
+									srcSet={import.meta.env.BASE_URL + product.image.mobile}
+								/>
 								<img
 									className={styles.productImageItem}
-									src={product.image.mobile}
+									src={import.meta.env.BASE_URL + product.image.mobile}
 									alt={product.name}
 									loading="lazy"
 								/>
