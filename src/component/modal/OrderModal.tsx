@@ -1,4 +1,4 @@
-import orderConfirmedIcon from "../../assets/images/icon-order-confirmed.svg";
+import orderConfirmedIcon from "/public/images/icon-order-confirmed.svg";
 import { Button } from "../ui/button/Button";
 import styles from "./OrderModal.module.css";
 

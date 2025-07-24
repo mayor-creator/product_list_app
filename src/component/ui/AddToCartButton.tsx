@@ -1,4 +1,4 @@
-import addToCartIcon from "../../assets/images/icon-add-to-cart.svg";
+import addToCartIcon from "/public/images/icon-add-to-cart.svg";
 import { Button } from "./button/Button";
 
 interface AddToCartButtonProps {

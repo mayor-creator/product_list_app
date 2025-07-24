@@ -1,4 +1,4 @@
-import carbonNeutralIcon from "../../assets/images/icon-carbon-neutral.svg";
+import carbonNeutralIcon from "/public/images/icon-carbon-neutral.svg";
 import { Button } from "../ui/button/Button";
 import styles from "./Cart.module.css";
 

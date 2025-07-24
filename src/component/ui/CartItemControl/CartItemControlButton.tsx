@@ -1,5 +1,5 @@
-import decreaseQuantityIcon from "../../../assets/images/icon-decrement-quantity.svg";
-import increaseQuantityIcon from "../../../assets/images/icon-increment-quantity.svg";
+import decreaseQuantityIcon from "/public/images/icon-decrement-quantity.svg";
+import increaseQuantityIcon from "/public/images/icon-increment-quantity.svg";
 import { Button } from "../button/Button";
 import styles from "./CartItemControlButton.module.css";
 
