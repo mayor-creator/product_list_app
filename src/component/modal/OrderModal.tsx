@@ -63,7 +63,7 @@ export const ConfirmOrderModal = ({
 									<div key={item.name} className={styles.modalItem}>
 										<div className={styles.thumbnailImageContainer}>
 											<img
-												src={item.thumbnail}
+												src={import.meta.env.BASE_URL + item.thumbnail}
 												alt={item.name}
 												width="48px"
 												height="48px"
